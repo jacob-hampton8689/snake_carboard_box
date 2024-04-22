@@ -1,12 +1,9 @@
-import turtle
-import os
-os.environ.__setitem__('Display' , ':0.0')
-tur = turtle.Turtle()
-
+import turtle as tur
 
 def screen (x , y , name):
     tur.title(name)
-    tur.geometry(f'{x}x{y}')
+    sc = tur.Screen()
+    sc.setup(x,y,startx=0,starty=0)
 
 if __name__ == '__main__':
     screen(600 , 620 , 'snake')
