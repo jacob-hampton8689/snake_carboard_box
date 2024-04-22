@@ -1,5 +1,6 @@
 import turtle as tur
 
+
 def screen (x , y , name):
     tur.title(name)
     sc = tur.Screen()
