@@ -1,6 +1,7 @@
 import turtle
-tur = turtle.Turtle()
 import os
+os.environ.__setitem__('Display' , ':0.0')
+tur = turtle.Turtle()
 
 
 def screen (x , y , name):
@@ -8,7 +9,6 @@ def screen (x , y , name):
     tur.geometry(f'{x}x{y}')
 
 if __name__ == '__main__':
-    os.environ.__setitem__('Display' , ':0.0')
     screen(600 , 620 , 'snake')
     while True:
         tur.exitonclick
