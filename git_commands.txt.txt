@@ -1,0 +1,11 @@
+git clone <repo URL> (initial stup of the repo)
+git pull (when you already have cloned it earlier)
+
+git config --global user.email zacharia.janes.6893@mail.linnenton.edu
+git config --global user.name zach
+
+git status
+git add * (or whatever file name you want to stage)
+git commit -m "some commit message"
+git push
+
