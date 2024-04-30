@@ -17,7 +17,17 @@ class Food:
        
 
     def teleporting(self):
+        tur.hideturtle()
+        tur.penup()
         self.location = tur.goto(foodX, foodY)
+        tur.showturtle()
+        tur.pendown()
 
 
         
+apple = Food("square", "red")
+apple.teleporting()
+sc = tur.Screen()
+sc.screensize(600, 600)
+sc.bgcolor("black")
+sc.exitonclick()
