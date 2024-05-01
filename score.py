@@ -24,7 +24,7 @@ class Score:
     
 
 
-
-screen = Score(600, 600, "black", 0, "Snake!")
-screen.screen_title(screen.title)
-screen.screen_elements(screen.width, screen.height, screen.color)
+if __name__ == '__main__':
+   screen = Score(600, 600, "black", 0, "Snake!")
+   screen.screen_title(screen.title)
+   screen.screen_elements(screen.width, screen.height, screen.color)
