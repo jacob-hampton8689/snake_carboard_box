@@ -10,21 +10,12 @@ class Score:
     self.all_time_score = high_score
     self.title = title
 
-  def display_score():
-     pen = tur.Turtle()
-     pen.speed(0)
-     pen.shape('circle')
-     pen.color('white')
-     pen.penup()
-     pen.hideturtle()
-     pen.goto(0, 310)
-     tur.write("Score: " + str(snake_score) + " High score: " + str(high_score), font= 
-    ("Arial", 24, "normal"))
+  
      
 
   def update_score(self):
      tur.clear()
-     tur.write("Score: {} High Score: {} ".format(self.score, self.all_time_score), allign="center", font=("arial", 24, "bold"))
+     tur.write("Score: {} High Score: {} ".format(self.score, self.all_time_score), align="center", font=("arial", 24, "bold"))
      self.score += 10
      self.all_time_score += high_score
 
@@ -35,12 +26,19 @@ class Score:
      tur.Screen()
      tur.screensize(width, height)
      tur.bgcolor(color)
+     tur.speed(0)
+     tur.shape('circle')
+     tur.color('white')
+     tur.penup()
+     tur.hideturtle()
+     tur.goto(0, 310)
+     tur.write("Score: " + str(self.score) + " High score: " + str(self.all_time_score), font= 
+    ("Arial", 24, "normal"))
      tur.exitonclick()
     
 def test():
    screen = Score(600, 680, "black", "Snake!")
    screen.screen_title(screen.title)
-   screen.display_score()
    screen.screen_elements(screen.width, screen.height, screen.color)
 
 
