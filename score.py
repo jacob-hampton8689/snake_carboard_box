@@ -22,9 +22,10 @@ class Score:
      tur.bgcolor(color)
      tur.exitonclick()
     
-
-
-if __name__ == '__main__':
+def test():
    screen = Score(600, 600, "black", 0, "Snake!")
    screen.screen_title(screen.title)
    screen.screen_elements(screen.width, screen.height, screen.color)
+
+if __name__ == '__main__':
+   test()
