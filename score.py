@@ -1,8 +1,15 @@
 import turtle as tur
 snake_score = 0
 high_score = 0
+grid = {}
+for i in range(300):
+   if i % 30 == 0:
+         grid.update({i // 30 : i})
+         grid.update({i // -30 : i * -1})
+
+
 class Score:
-  def __init__(self, width, height, color,title):
+  def __init__(self , width , height , color , title):
     self.width = width
     self.height = height
     self.color = color
@@ -46,4 +53,5 @@ def test():
 
 
 if __name__ == '__main__':
-   test()
+   '''test()'''
+   print(grid)
