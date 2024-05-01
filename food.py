@@ -24,10 +24,13 @@ class Food:
         tur.pendown()
 
 
-        
-apple = Food("square", "red")
-apple.teleporting()
-sc = tur.Screen()
-sc.screensize(600, 600)
-sc.bgcolor("black")
-sc.exitonclick()
+def test():        
+    apple = Food("square", "red")
+    apple.teleporting()
+    sc = tur.Screen()
+    sc.screensize(600, 600)
+    sc.bgcolor("black")
+    sc.exitonclick()
+
+if __name__ == '__main__':
+    test
