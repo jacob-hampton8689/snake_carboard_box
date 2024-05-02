@@ -1,6 +1,8 @@
 import turtle as tur
 snake_score = 0
 high_score = 0
+wn = tur.Screen()
+
 grid = {}
 for i in range(300):
    if i % 30 == 0:
@@ -38,7 +40,7 @@ class Score:
      tur.color('white')
      tur.penup()
      tur.hideturtle()
-     tur.goto(0, 310)
+     tur.goto(-150, 360)
      tur.write("Score: " + str(self.score) + " High score: " + str(self.all_time_score), font= 
     ("Arial", 24, "normal"))
      tur.exitonclick()
@@ -51,5 +53,5 @@ def test():
 
 
 if __name__ == '__main__':
-   '''test()'''
+   test()
    print(grid)
