@@ -2,7 +2,6 @@ from turtle import Turtle
 from turtle import Screen as tscreen
 from score import grid
 import time
-screen = tscreen()
 
 def makesquare (color , width , dood):
     dood.down()
@@ -76,6 +75,7 @@ class snake:
 
 
 if __name__ == '__main__':
+    screen = tscreen()
     dood = Turtle()
     dood.speed('fastest')
     dood.hideturtle()
