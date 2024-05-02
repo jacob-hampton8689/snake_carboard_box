@@ -1,9 +1,9 @@
 import turtle as tur
 import random as ran
+from score import grid
 
-foodY = ran.randint(-280, 280)
-foodX = ran.randint(-280,280)
-
+foodY = ran.choice(grid.keys())
+foodX = ran.choice(grid.keys())
 
 class Food:
     def __init__(self, shape, color):
@@ -33,4 +33,8 @@ def test():
     sc.exitonclick()
 
 if __name__ == '__main__':
-    test
+    test()
+    print(foodX)
+    print(foodY)
+    print(from_x1)
+    print(from_x2)
