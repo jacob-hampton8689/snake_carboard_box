@@ -1,31 +1,31 @@
+from score import grid
 import turtle as tur
 import random as ran
-from score import grid
 
-foodY = ran.choice(grid.keys())
-foodX = ran.choice(grid.keys())
 
 class Food:
-    def __init__(self, shape, color):
+    def __init__(self, shape, color , plane):
         shape = tur.shape("square")
-        color = tur.color("red")
+        color = tur.color("red")   
         self.shape = shape
         self.color = color
-        self.posy = foodX
-        self.posy = foodY
-        self.location = (foodX, foodY)
+        self.grid = plane
+
        
 
     def teleporting(self):
+        self.foodY = ran.choice(list(self.grid.keys()))
+        self.foodX = ran.choice([self.grid.keys()])
+        print(self.grid.keys())
         tur.hideturtle()
         tur.penup()
-        self.location = tur.goto(foodX, foodY)
+        '''self.location = tur.goto(self.grid[self.foodX], self.grid[self.foodY])'''
         tur.showturtle()
         tur.pendown()
 
 
 def test():        
-    apple = Food("square", "red")
+    apple = Food("square", "red" , grid)
     apple.teleporting()
     sc = tur.Screen()
     sc.screensize(600, 600)
@@ -34,7 +34,7 @@ def test():
 
 if __name__ == '__main__':
     test()
-    print(foodX)
+    '''print(foodX)
     print(foodY)
     print(from_x1)
-    print(from_x2)
+    print(from_x2)'''
