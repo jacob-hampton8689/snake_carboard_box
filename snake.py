@@ -3,6 +3,8 @@ from turtle import Screen as tscreen
 from score import grid
 import time
 
+count = 0
+
 def makesquare (color , width , dood):
     dood.down()
     dood.color(color)
@@ -21,6 +23,7 @@ def makesquare (color , width , dood):
 class snake:
     def __init__(self , x , y , color , width , bgcol , turlte , speed):
         global screen
+        global count
         self.x = x
         self.y = y
         self.head = [x , y]
@@ -35,6 +38,7 @@ class snake:
         self.speed = speed
    
     def move(self):
+        self.collision()
         xpos = self.head[0]
         ypos = self.head[1]
         if self.direction == 'right':
@@ -49,30 +53,46 @@ class snake:
         self.body.append([xpos , ypos])
         self.draw()
         time.sleep(10 / self.speed)
+        print(count)
 
     def draw(self):
         screen.tracer(0)  
-        print(self.dood)
-        print(self.dood.position())   
         self.dood.up()
-        self.dood.goto(grid[self.body[0][0]] , grid[self.body[0][1]])
-        makesquare(self.bg , self.width , self.dood)
+        print(self.hit_food)
+        if self.hit_food == False:
+            self.dood.goto(grid[self.body[0][0]] , grid[self.body[0][1]])
+            makesquare(self.bg , self.width , self.dood)
+            del self.body[0]
         self.dood.goto(grid[self.head[0]] , grid[self.head[1]])
         makesquare(self.color , self.width , self.dood)
-        if self.hit_food == False:
-            del self.body[0]
         screen.update()
 
     def collision(self):
-        for i in self.body:
-            if i == self.head:
+        for i in len(self.body):
+            if self.body[i + 1] == self.head:
                 print('gameover')
-                self.game_over()
-
-
+             
     def game_over():
         pass
 
+def testmove(snake):
+    c = 0
+    while c < 3:
+        snake.move()
+        print(snake.body)
+        c += 1
+    c = 0
+    snake.direction = 'up'
+    while c < 5:
+        snake.move()
+        print(snake.body)
+        c += 1
+    snake.direction = 'left'
+    snake.move()
+    snake.direction = 'down'
+    snake.move()
+    snake.direction = 'right'
+    snake.move()
 
 if __name__ == '__main__':
     screen = tscreen()
@@ -80,11 +100,6 @@ if __name__ == '__main__':
     dood.speed('fastest')
     dood.hideturtle()
     screen.screensize(600 , 600)
-    body = snake(grid[0] , grid[0] , 'green' , 30 , 'white' , dood , 5)
-    body.move()
-    print(body.body)
-    body.move()
-    print(body.body)
-    body.move()
-    print(body.body)
+    body = snake(0 , 0 , 'green' , 30 , 'white' , dood , 5)
+    testmove(body)
     screen.exitonclick()

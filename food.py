@@ -1,12 +1,12 @@
+from score import grid
 import turtle as tur
 import random as ran
-from score import grid
 
 
 class Food:
     def __init__(self, shape, coloryy):
         shape = tur.shape("square")
-        color = tur.color("red")
+        color = tur.color("red")   
         self.shape = shape
         self.color = color
         
