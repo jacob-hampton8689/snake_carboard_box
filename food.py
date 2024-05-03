@@ -4,12 +4,12 @@ from score import grid
 
 
 class Food:
-    def __init__(self, shape, color,plane):
+    def __init__(self, shape, coloryy):
         shape = tur.shape("square")
         color = tur.color("red")
         self.shape = shape
         self.color = color
-        self.grid = plane
+        
        
 
     def teleporting(self):
@@ -23,7 +23,7 @@ class Food:
 
 
 def test():        
-    apple = Food("square", "red", grid)
+    apple = Food("square", "red")
     apple.teleporting()
     sc = tur.Screen()
     sc.screensize(600, 600)
